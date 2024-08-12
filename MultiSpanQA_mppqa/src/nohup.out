@@ -1,0 +1,427 @@
+Traceback (most recent call last):
+  File "run_single_tagger_plus_mppqa.py", line 24, in <module>
+    from torch_geometric.nn import DataParallel
+  File "/root/miniconda3/lib/python3.8/site-packages/torch_geometric/__init__.py", line 2, in <module>
+    import torch_geometric.data
+  File "/root/miniconda3/lib/python3.8/site-packages/torch_geometric/data/__init__.py", line 57, in <module>
+    from torch_geometric.loader import NeighborSampler
+  File "/root/miniconda3/lib/python3.8/site-packages/torch_geometric/loader/__init__.py", line 4, in <module>
+    from .node_loader import NodeLoader
+  File "/root/miniconda3/lib/python3.8/site-packages/torch_geometric/loader/node_loader.py", line 8, in <module>
+    from torch_geometric.loader.mixin import AffinityMixin
+  File "/root/miniconda3/lib/python3.8/site-packages/torch_geometric/loader/mixin.py", line 7, in <module>
+    import psutil
+  File "/root/miniconda3/lib/python3.8/site-packages/psutil/__init__.py", line 241, in <module>
+    raise ImportError(msg)
+ImportError: version conflict: '/root/miniconda3/lib/python3.8/site-packages/psutil/_psutil_linux.cpython-38-x86_64-linux-gnu.so' C extension module was built for another version of psutil (5.9.1 instead of 5.9.4); you may try to 'pip uninstall psutil', manually remove /root/miniconda3/lib/python3.8/site-packages/psutil/_psutil_linux.cpython-38-x86_64-linux-gnu.so or clean the virtual env somehow, then reinstall
+Using the `WAND_DISABLED` environment variable is deprecated and will be removed in v5. Use the --report_to flag to control the integrations used for logging result (for instance --report_to none).
+05/09/2024 21:20:58 - WARNING - __main__ - Process rank: -1, device: cuda:0, n_gpu: 1distributed training: False, 16-bits training: False
+05/09/2024 21:20:58 - INFO - __main__ - Training/evaluation parameters TrainingArguments(
+_n_gpu=1,
+adafactor=False,
+adam_beta1=0.9,
+adam_beta2=0.999,
+adam_epsilon=1e-08,
+auto_find_batch_size=False,
+bf16=False,
+bf16_full_eval=False,
+data_seed=None,
+dataloader_drop_last=False,
+dataloader_num_workers=0,
+dataloader_pin_memory=True,
+ddp_bucket_cap_mb=None,
+ddp_find_unused_parameters=None,
+debug=[],
+deepspeed=None,
+disable_tqdm=False,
+do_eval=True,
+do_predict=False,
+do_train=True,
+eval_accumulation_steps=50,
+eval_delay=0,
+eval_steps=None,
+evaluation_strategy=IntervalStrategy.NO,
+fp16=False,
+fp16_backend=auto,
+fp16_full_eval=False,
+fp16_opt_level=O1,
+fsdp=[],
+fsdp_min_num_params=0,
+full_determinism=False,
+gradient_accumulation_steps=1,
+gradient_checkpointing=False,
+greater_is_better=None,
+group_by_length=False,
+half_precision_backend=auto,
+hub_model_id=None,
+hub_private_repo=False,
+hub_strategy=HubStrategy.EVERY_SAVE,
+hub_token=<HUB_TOKEN>,
+ignore_data_skip=False,
+include_inputs_for_metrics=False,
+jit_mode_eval=False,
+label_names=None,
+label_smoothing_factor=0.0,
+learning_rate=8e-06,
+length_column_name=length,
+load_best_model_at_end=False,
+local_rank=-1,
+log_level=-1,
+log_level_replica=-1,
+log_on_each_node=True,
+logging_dir=../output/mppqa_v2/output_single_tagger_plus_bert_large_050901/runs/May09_21-20-58_autodl-container-ade5118aae-20230c70,
+logging_first_step=False,
+logging_nan_inf_filter=True,
+logging_steps=500,
+logging_strategy=IntervalStrategy.STEPS,
+lr_scheduler_type=SchedulerType.LINEAR,
+max_grad_norm=1.0,
+max_steps=-1,
+metric_for_best_model=None,
+mp_parameters=,
+no_cuda=False,
+num_train_epochs=10.0,
+optim=OptimizerNames.ADAMW_HF,
+output_dir=../output/mppqa_v2/output_single_tagger_plus_bert_large_050901,
+overwrite_output_dir=True,
+past_index=-1,
+per_device_eval_batch_size=8,
+per_device_train_batch_size=2,
+prediction_loss_only=False,
+push_to_hub=False,
+push_to_hub_model_id=None,
+push_to_hub_organization=None,
+push_to_hub_token=<PUSH_TO_HUB_TOKEN>,
+ray_scope=last,
+remove_unused_columns=True,
+report_to=['tensorboard'],
+resume_from_checkpoint=None,
+run_name=../output/mppqa_v2/output_single_tagger_plus_bert_large_050901,
+save_on_each_node=False,
+save_steps=500,
+save_strategy=IntervalStrategy.STEPS,
+save_total_limit=None,
+seed=42,
+sharded_ddp=[],
+skip_memory_metrics=True,
+tf32=None,
+torchdynamo=None,
+tpu_metrics_debug=False,
+tpu_num_cores=None,
+use_ipex=False,
+use_legacy_prediction_loop=False,
+warmup_ratio=0.0,
+warmup_steps=0,
+weight_decay=0.0,
+xpu_backend=None,
+)
+Using custom data configuration default-6967052570f81967
+05/09/2024 21:20:58 - INFO - datasets.builder - Using custom data configuration default-6967052570f81967
+Loading Dataset Infos from /root/miniconda3/lib/python3.8/site-packages/datasets/packaged_modules/json
+05/09/2024 21:20:58 - INFO - datasets.info - Loading Dataset Infos from /root/miniconda3/lib/python3.8/site-packages/datasets/packaged_modules/json
+Overwrite dataset info from restored data version if exists.
+05/09/2024 21:20:58 - INFO - datasets.builder - Overwrite dataset info from restored data version if exists.
+Loading Dataset info from /root/.cache/huggingface/datasets/json/default-6967052570f81967/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+05/09/2024 21:20:58 - INFO - datasets.info - Loading Dataset info from /root/.cache/huggingface/datasets/json/default-6967052570f81967/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+Found cached dataset json (/root/.cache/huggingface/datasets/json/default-6967052570f81967/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+05/09/2024 21:20:59 - INFO - datasets.builder - Found cached dataset json (/root/.cache/huggingface/datasets/json/default-6967052570f81967/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96)
+Loading Dataset info from /root/.cache/huggingface/datasets/json/default-6967052570f81967/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+05/09/2024 21:20:59 - INFO - datasets.info - Loading Dataset info from /root/.cache/huggingface/datasets/json/default-6967052570f81967/0.0.0/8bb11242116d547c741b2e8a1f18598ffdd40a1d4f2a2872c7a28b697434bc96
+[INFO|configuration_utils.py:657] 2024-05-09 21:20:59,038 >> loading configuration file /root/bert-large-uncased/config.json
+[INFO|configuration_utils.py:708] 2024-05-09 21:20:59,039 >> Model config BertConfig {
+  "_name_or_path": "/root/bert-large-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "finetuning_task": "ner",
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "id2label": {
+    "0": "B",
+    "1": "I",
+    "2": "O"
+  },
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "label2id": {
+    "B": 0,
+    "I": 1,
+    "O": 2
+  },
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.20.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_auto.py:392] 2024-05-09 21:20:59,039 >> Could not locate the tokenizer configuration file, will try to use the model config instead.
+[INFO|configuration_utils.py:657] 2024-05-09 21:20:59,039 >> loading configuration file /root/bert-large-uncased/config.json
+[INFO|configuration_utils.py:708] 2024-05-09 21:20:59,039 >> Model config BertConfig {
+  "_name_or_path": "/root/bert-large-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.20.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+[INFO|tokenization_utils_base.py:1701] 2024-05-09 21:20:59,040 >> Didn't find file /root/bert-large-uncased/added_tokens.json. We won't load it.
+[INFO|tokenization_utils_base.py:1701] 2024-05-09 21:20:59,040 >> Didn't find file /root/bert-large-uncased/special_tokens_map.json. We won't load it.
+[INFO|tokenization_utils_base.py:1701] 2024-05-09 21:20:59,040 >> Didn't find file /root/bert-large-uncased/tokenizer_config.json. We won't load it.
+[INFO|tokenization_utils_base.py:1779] 2024-05-09 21:20:59,040 >> loading file /root/bert-large-uncased/vocab.txt
+[INFO|tokenization_utils_base.py:1779] 2024-05-09 21:20:59,040 >> loading file /root/bert-large-uncased/tokenizer.json
+[INFO|tokenization_utils_base.py:1779] 2024-05-09 21:20:59,040 >> loading file None
+[INFO|tokenization_utils_base.py:1779] 2024-05-09 21:20:59,040 >> loading file None
+[INFO|tokenization_utils_base.py:1779] 2024-05-09 21:20:59,040 >> loading file None
+[INFO|configuration_utils.py:657] 2024-05-09 21:20:59,040 >> loading configuration file /root/bert-large-uncased/config.json
+[INFO|configuration_utils.py:708] 2024-05-09 21:20:59,041 >> Model config BertConfig {
+  "_name_or_path": "/root/bert-large-uncased",
+  "architectures": [
+    "BertForMaskedLM"
+  ],
+  "attention_probs_dropout_prob": 0.1,
+  "classifier_dropout": null,
+  "gradient_checkpointing": false,
+  "hidden_act": "gelu",
+  "hidden_dropout_prob": 0.1,
+  "hidden_size": 1024,
+  "initializer_range": 0.02,
+  "intermediate_size": 4096,
+  "layer_norm_eps": 1e-12,
+  "max_position_embeddings": 512,
+  "model_type": "bert",
+  "num_attention_heads": 16,
+  "num_hidden_layers": 24,
+  "pad_token_id": 0,
+  "position_embedding_type": "absolute",
+  "transformers_version": "4.20.1",
+  "type_vocab_size": 2,
+  "use_cache": true,
+  "vocab_size": 30522
+}
+
+Running tokenizer on train dataset:   0%|          | 0/988 [00:00<?, ? examples/s]Running tokenizer on train dataset:   0%|          | 0/988 [00:05<?, ? examples/s]Running tokenizer on train dataset:   0%|          | 0/988 [00:05<?, ? examples/s]
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /root/MultiSpanQA_mppqa/src/run_single_tagger_plus_mppqa.py:1622 in <module> │
+│                                                                              │
+│   1619 │   print(multi_span_evaluate(all_predictions, golds))                │
+│   1620                                                                       │
+│   1621 if __name__ == "__main__":                                            │
+│ ❱ 1622 │   main()                                                            │
+│   1623                                                                       │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/run_single_tagger_plus_mppqa.py:1204 in main     │
+│                                                                              │
+│   1201 │   │   │   train_examples = train_examples.select(range(data_args.ma │
+│   1202 │   │   # 补充对sent data的处理                                       │
+│   1203 │   │   with training_args.main_process_first(desc="train dataset map │
+│ ❱ 1204 │   │   │   train_dataset = train_examples.map(                       │
+│   1205 │   │   │   │   prepare_train_features,                               │
+│   1206 │   │   │   │   batched=True, # 将example分割为对应batch的字典        │
+│   1207 │   │   │   │   num_proc=data_args.preprocessing_num_workers,         │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/arrow_dataset.py:592   │
+│ in wrapper                                                                   │
+│                                                                              │
+│    589 │   │   else:                                                         │
+│    590 │   │   │   self: "Dataset" = kwargs.pop("self")                      │
+│    591 │   │   # apply actual function                                       │
+│ ❱  592 │   │   out: Union["Dataset", "DatasetDict"] = func(self, *args, **kw │
+│    593 │   │   datasets: List["Dataset"] = list(out.values()) if isinstance( │
+│    594 │   │   for dataset in datasets:                                      │
+│    595 │   │   │   # Remove task templates if a column mapping of the templa │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/arrow_dataset.py:557   │
+│ in wrapper                                                                   │
+│                                                                              │
+│    554 │   │   │   "output_all_columns": self._output_all_columns,           │
+│    555 │   │   }                                                             │
+│    556 │   │   # apply actual function                                       │
+│ ❱  557 │   │   out: Union["Dataset", "DatasetDict"] = func(self, *args, **kw │
+│    558 │   │   datasets: List["Dataset"] = list(out.values()) if isinstance( │
+│    559 │   │   # re-apply format to the output                               │
+│    560 │   │   for dataset in datasets:                                      │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/arrow_dataset.py:3093  │
+│ in map                                                                       │
+│                                                                              │
+│   3090 │   │   │   │   │   total=pbar_total,                                 │
+│   3091 │   │   │   │   │   desc=desc or "Map",                               │
+│   3092 │   │   │   │   ) as pbar:                                            │
+│ ❱ 3093 │   │   │   │   │   for rank, done, content in Dataset._map_single(** │
+│   3094 │   │   │   │   │   │   if done:                                      │
+│   3095 │   │   │   │   │   │   │   shards_done += 1                          │
+│   3096 │   │   │   │   │   │   │   logger.debug(f"Finished processing shard  │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/arrow_dataset.py:3470  │
+│ in _map_single                                                               │
+│                                                                              │
+│   3467 │   │   │   │   │   │   │   range(*(slice(i, i + batch_size).indices( │
+│   3468 │   │   │   │   │   │   )  # Something simpler?                       │
+│   3469 │   │   │   │   │   │   try:                                          │
+│ ❱ 3470 │   │   │   │   │   │   │   batch = apply_function_on_filtered_inputs │
+│   3471 │   │   │   │   │   │   │   │   batch,                                │
+│   3472 │   │   │   │   │   │   │   │   indices,                              │
+│   3473 │   │   │   │   │   │   │   │   check_same_num_examples=len(shard.lis │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/arrow_dataset.py:3349  │
+│ in apply_function_on_filtered_inputs                                         │
+│                                                                              │
+│   3346 │   │   │   │   additional_args += (effective_indices,)               │
+│   3347 │   │   │   if with_rank:                                             │
+│   3348 │   │   │   │   additional_args += (rank,)                            │
+│ ❱ 3349 │   │   │   processed_inputs = function(*fn_args, *additional_args, * │
+│   3350 │   │   │   if isinstance(processed_inputs, LazyDict):                │
+│   3351 │   │   │   │   processed_inputs = {                                  │
+│   3352 │   │   │   │   │   k: v for k, v in processed_inputs.data.items() if │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/run_single_tagger_plus_mppqa.py:1015 in          │
+│ prepare_train_features                                                       │
+│                                                                              │
+│   1012 │   │   features, conn_edges, edges, link_labels, link_type_labels, \ │
+│   1013 │   │   │   sent_types, max_node_num_per_process,tokenize_sents,sent_ │
+│   1014 │   │   │   │   tokenidx2sentenceidxs_list,edge_percent = \           │
+│ ❱ 1015 │   │   │   prepare_data(examples,filepath=args.data_dir,             │
+│   1016 │   │   │   │   │   │   max_seq_len=80,tokenizer=tokenizer,window=arg │
+│   1017 │   │   │   │   │   │   graph_connection=args.graph_connection_type)  │
+│   1018 │   │   args.edge_percent = edge_percent                              │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/graph_util.py:325 in prepare_data                │
+│                                                                              │
+│   322 │   syn_rel2id = json_util.load(os.path.join(filepath, 'syn_rel2id.jso │
+│   323 │                                                                      │
+│   324 │   sent_examples, pos_of_examples, syn_of_examples, conn_edges, edges │
+│ ❱ 325 │   │   read_examples_from_file(examples, graph_connection,  link2id,  │
+│   326 │                                                                      │
+│   327 │   features = convert_examples_to_features(sent_examples, pos_of_exam │
+│   328 │   │   │   │   │   │   │   │    pos2id, syn_rel2id, tokenizer)        │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/graph_util.py:104 in read_examples_from_file     │
+│                                                                              │
+│   101 │   │   │   context_token_idx+=len(eachsentattr['tokenize_sent'])      │
+│   102 │   │   return tokenidx2sentenceidx                                    │
+│   103 │                                                                      │
+│ ❱ 104 │   for i,sent_data in enumerate(data['sent_data']):                   │
+│   105 │   │   tokenidx2sentenceidxs_list.append(get_tokenidx2sentenceidxs(se │
+│   106 │   │   if len(sent_data)<=1:                                          │
+│   107 │   │   │   continue                                                   │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/formatting/formatting. │
+│ py:272 in __getitem__                                                        │
+│                                                                              │
+│   269 │   def __getitem__(self, key):                                        │
+│   270 │   │   value = self.data[key]                                         │
+│   271 │   │   if key in self.keys_to_format:                                 │
+│ ❱ 272 │   │   │   value = self.format(key)                                   │
+│   273 │   │   │   self.data[key] = value                                     │
+│   274 │   │   │   self.keys_to_format.remove(key)                            │
+│   275 │   │   return value                                                   │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/formatting/formatting. │
+│ py:375 in format                                                             │
+│                                                                              │
+│   372                                                                        │
+│   373 class LazyBatch(LazyDict):                                             │
+│   374 │   def format(self, key):                                             │
+│ ❱ 375 │   │   return self.formatter.format_column(self.pa_table.select([key] │
+│   376                                                                        │
+│   377                                                                        │
+│   378 class Formatter(Generic[RowFormat, ColumnFormat, BatchFormat]):        │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/formatting/formatting. │
+│ py:441 in format_column                                                      │
+│                                                                              │
+│   438 │   │   return row                                                     │
+│   439 │                                                                      │
+│   440 │   def format_column(self, pa_table: pa.Table) -> list:               │
+│ ❱ 441 │   │   column = self.python_arrow_extractor().extract_column(pa_table │
+│   442 │   │   column = self.python_features_decoder.decode_column(column, pa │
+│   443 │   │   return column                                                  │
+│   444                                                                        │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/site-packages/datasets/formatting/formatting. │
+│ py:147 in extract_column                                                     │
+│                                                                              │
+│   144 │   │   return _unnest(pa_table.to_pydict())                           │
+│   145 │                                                                      │
+│   146 │   def extract_column(self, pa_table: pa.Table) -> list:              │
+│ ❱ 147 │   │   return pa_table.column(0).to_pylist()                          │
+│   148 │                                                                      │
+│   149 │   def extract_batch(self, pa_table: pa.Table) -> dict:               │
+│   150 │   │   return pa_table.to_pydict()                                    │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/pyarrow/table.pxi:1258 in                        │
+│ pyarrow.lib.ChunkedArray.to_pylist                                           │
+│                                                                              │
+│ [Errno 2] No such file or directory:                                         │
+│ '/root/MultiSpanQA_mppqa/src/pyarrow/table.pxi'                              │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/pyarrow/array.pxi:1464 in                        │
+│ pyarrow.lib.Array.to_pylist                                                  │
+│                                                                              │
+│ [Errno 2] No such file or directory:                                         │
+│ '/root/MultiSpanQA_mppqa/src/pyarrow/array.pxi'                              │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/pyarrow/scalar.pxi:632 in                        │
+│ pyarrow.lib.ListScalar.as_py                                                 │
+│                                                                              │
+│ [Errno 2] No such file or directory:                                         │
+│ '/root/MultiSpanQA_mppqa/src/pyarrow/scalar.pxi'                             │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/pyarrow/array.pxi:1464 in                        │
+│ pyarrow.lib.Array.to_pylist                                                  │
+│                                                                              │
+│ [Errno 2] No such file or directory:                                         │
+│ '/root/MultiSpanQA_mppqa/src/pyarrow/array.pxi'                              │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/pyarrow/scalar.pxi:705 in                        │
+│ pyarrow.lib.StructScalar.as_py                                               │
+│                                                                              │
+│ [Errno 2] No such file or directory:                                         │
+│ '/root/MultiSpanQA_mppqa/src/pyarrow/scalar.pxi'                             │
+│                                                                              │
+│ /root/MultiSpanQA_mppqa/src/pyarrow/scalar.pxi:705 in                        │
+│ pyarrow.lib.StructScalar.as_py                                               │
+│                                                                              │
+│ [Errno 2] No such file or directory:                                         │
+│ '/root/MultiSpanQA_mppqa/src/pyarrow/scalar.pxi'                             │
+│                                                                              │
+│ /root/miniconda3/lib/python3.8/_collections_abc.py:720 in __iter__           │
+│                                                                              │
+│    717 │   │   return key in self._mapping                                   │
+│    718 │                                                                     │
+│    719 │   def __iter__(self):                                               │
+│ ❱  720 │   │   yield from self._mapping                                      │
+│    721                                                                       │
+│    722 KeysView.register(dict_keys)                                          │
+│    723                                                                       │
+╰──────────────────────────────────────────────────────────────────────────────╯
+KeyboardInterrupt
