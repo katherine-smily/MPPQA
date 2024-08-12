@@ -1,0 +1,45 @@
+Map:   0%|          | 0/247 [00:00<?, ? examples/s]                                                   Map:   0%|          | 0/247 [00:00<?, ? examples/s]Token indices sequence length is longer than the specified maximum sequence length for this model (8402 > 512). Running this sequence through the model will result in indexing errors
+Map: 100%|██████████| 247/247 [00:01<00:00, 203.25 examples/s]                                                              Map:   0%|          | 0/247 [00:00<?, ? examples/s]Map:   0%|          | 0/247 [00:00<?, ? examples/s]                                                   Traceback (most recent call last):
+  File "flan-t5-mppqa.py", line 161, in <module>
+    dev_generated = dev_tokenized.map(lambda x: generate(x), batched=True, batch_size=8)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 578, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 543, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3073, in map
+    for rank, done, content in Dataset._map_single(**dataset_kwargs):
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3449, in _map_single
+    batch = apply_function_on_filtered_inputs(
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/datasets/arrow_dataset.py", line 3330, in apply_function_on_filtered_inputs
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "flan-t5-mppqa.py", line 161, in <lambda>
+    dev_generated = dev_tokenized.map(lambda x: generate(x), batched=True, batch_size=8)
+  File "flan-t5-mppqa.py", line 156, in generate
+    x['output'] = [model.generate(torch.tensor(x_ids).reshape(1, -1).to(device), 
+  File "flan-t5-mppqa.py", line 156, in <listcomp>
+    x['output'] = [model.generate(torch.tensor(x_ids).reshape(1, -1).to(device), 
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/autograd/grad_mode.py", line 27, in decorate_context
+    return func(*args, **kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/generation/utils.py", line 1393, in generate
+    model_kwargs = self._prepare_encoder_decoder_kwargs_for_generation(
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/generation/utils.py", line 503, in _prepare_encoder_decoder_kwargs_for_generation
+    model_kwargs["encoder_outputs"]: ModelOutput = encoder(**encoder_kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 1115, in forward
+    layer_outputs = layer_module(
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 695, in forward
+    self_attention_outputs = self.layer[0](
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 602, in forward
+    attention_output = self.SelfAttention(
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/nn/modules/module.py", line 1130, in _call_impl
+    return forward_call(*input, **kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/models/t5/modeling_t5.py", line 562, in forward
+    attn_weights = nn.functional.softmax(scores.float(), dim=-1).type_as(
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/nn/functional.py", line 1834, in softmax
+    ret = input.softmax(dim)
+RuntimeError: CUDA out of memory. Tried to allocate 4.21 GiB (GPU 0; 15.90 GiB total capacity; 10.31 GiB already allocated; 647.12 MiB free; 14.57 GiB reserved in total by PyTorch) If reserved memory is >> allocated memory try setting max_split_size_mb to avoid fragmentation.  See documentation for Memory Management and PYTORCH_CUDA_ALLOC_CONF

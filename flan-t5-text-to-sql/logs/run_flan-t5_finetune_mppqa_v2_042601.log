@@ -1,0 +1,31 @@
+Map:   0%|          | 0/988 [00:00<?, ? examples/s]Map: 100%|██████████| 988/988 [00:00<00:00, 7573.16 examples/s]                                                               Map:   0%|          | 0/247 [00:00<?, ? examples/s]                                                   Map:   0%|          | 0/988 [00:00<?, ? examples/s]Token indices sequence length is longer than the specified maximum sequence length for this model (8395 > 512). Running this sequence through the model will result in indexing errors
+Map: 100%|██████████| 988/988 [00:08<00:00, 120.80 examples/s]                                                              Map:   0%|          | 0/247 [00:00<?, ? examples/s]Map: 100%|██████████| 247/247 [00:01<00:00, 126.16 examples/s]                                                              Map:   0%|          | 0/988 [00:00<?, ? examples/s]Map: 100%|██████████| 988/988 [00:00<00:00, 2556.42 examples/s]                                                               Map:   0%|          | 0/247 [00:00<?, ? examples/s]                                                   /home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/accelerate/accelerator.py:436: FutureWarning: Passing the following arguments to `Accelerator` is deprecated and will be removed in version 1.0 of Accelerate: dict_keys(['dispatch_batches', 'split_batches', 'even_batches', 'use_seedable_sampler']). Please pass an `accelerate.DataLoaderConfiguration` instead: 
+dataloader_config = DataLoaderConfiguration(dispatch_batches=None, split_batches=False, even_batches=True, use_seedable_sampler=True)
+  warnings.warn(
+Detected kernel version 5.4.0, which is below the recommended minimum of 5.5.0; this can cause the process to hang. It is recommended to upgrade the kernel to the minimum version or higher.
+  0%|          | 0/1230 [00:00<?, ?it/s]`use_cache=True` is incompatible with gradient checkpointing. Setting `use_cache=False`...
+/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/nn/parallel/_functions.py:68: UserWarning: Was asked to gather along dimension 0, but all input tensors were scalars; will instead unsqueeze and return a vector.
+  warnings.warn('Was asked to gather along dimension 0, but all '
+Traceback (most recent call last):
+  File "flan-t5-mppqa_finetune.py", line 274, in <module>
+    trainer.train()
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/trainer.py", line 1780, in train
+    return inner_training_loop(
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/trainer.py", line 2118, in _inner_training_loop
+    tr_loss_step = self.training_step(model, inputs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/transformers/trainer.py", line 3045, in training_step
+    self.accelerator.backward(loss)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/accelerate/accelerator.py", line 2013, in backward
+    loss.backward(**kwargs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/_tensor.py", line 396, in backward
+    torch.autograd.backward(self, gradient, retain_graph, create_graph, inputs=inputs)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/autograd/function.py", line 253, in apply
+    return user_fn(self, *args)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/utils/checkpoint.py", line 146, in backward
+    torch.autograd.backward(outputs_with_grad, args_with_grad)
+  File "/home/cike/anaconda3/envs/spanqualifier/lib/python3.8/site-packages/torch/autograd/__init__.py", line 173, in backward
+    Variable._execution_engine.run_backward(  # Calls into the C++ engine to run the backward pass
+RuntimeError: unique_by_key: failed to synchronize: cudaErrorIllegalAddress: an illegal memory access was encountered
+  0%|          | 0/1230 [00:08<?, ?it/s]
